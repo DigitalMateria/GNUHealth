@@ -1,13 +1,15 @@
+/*jslint node:true */
+'use strict';
 
-	/**
-	 * Reads records
-	 *
-	 * @param name Name of model
-	 * @param req
-	 * @param res
-	 */
+/**
+ * Reads records
+ *
+ * @param name Name of model
+ * @param req
+ * @param res
+ */
 exports.read =  function (req, res) {
-	var params = req.body;
+	//var params = req.body;
 
 	exports.model.find({}, function (err, records) {
 		res.send({ success: true, User: records });

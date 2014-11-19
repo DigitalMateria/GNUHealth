@@ -1,7 +1,10 @@
+/*jslint node:true */
+'use strict';
+
 // deps
 var express = require('express'),
 	router = require('./server/router'),
-	http = require('http'),
+	//http = require('http'),
 	path = require('path'),
 	dbPath = 'mongodb://localhost/gnuhealth',
 	
@@ -23,7 +26,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // db
 mongoose.connect(dbPath, function (err) {
